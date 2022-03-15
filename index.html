@@ -1,7 +1,7 @@
 <div id="app">
 <h1>Functions</h1>
 <h4>Functions are the main “building blocks” of the program. They allow the code to be called many times without repetition.</h4>
-
+<div>
 <h2>Function Declaration</h2>
 <ul>
 <li>To create a function we can use a function declaration.</li>
@@ -11,10 +11,14 @@
 }</code>
 <li>The function declared can be called by its name with parenthesis: <code>functionName(argument1, argument2, ...)</code></li>
 </ul>
+</div>
+<div>
 <h2>Local variables</h2>
 <ul>
 <li>A variable declared inside a function is only visible inside that function.</li>
 </ul>
+</div>
+<div>
 <h2>Outer variables</h2>
 <ul>
 <li>A function can access an outer variable as well, for example:</li>
@@ -28,6 +32,8 @@
     <li>Sometimes though, they can be useful to store project-level data.</li>
   </ul></li>
 </ul>
+</div>
+<div>
 <h2>Parameters</h2>
 <ul>
   <li>We can pass arbitrary data to functions using parameters.</li>
@@ -43,26 +49,28 @@
       <li><strong>Evaluation of default parameters:</strong>
       In JavaScript, a default parameter is evaluated every time the function is called without the respective parameter.</li>
       <li><strong>Alternative default parameters: </strong>
-        Sometimes it makes sense to assign default values for parameters not in the function declaration, but at a later stage.<p>
+        Sometimes it makes sense to assign default values for parameters not in the function declaration, but at a later stage.<p class="code">
         <code>function showMessage(text) {</br>
         &emsp;&emsp;// ...</br>
-        &emsp;&emsp;text = text || 'empty';</br>
-        //OR ,</br>
-        &emsp;&emsp;if (text === undefined) { // if the parameter is missing
-          &emsp;&emsp; &emsp;&emsp;text = 'empty message';
-          &emsp;&emsp; }</br>
+        &emsp;&emsp;text = text || 'empty';</br></br>
+        &emsp;&emsp;//OR ,</br>
+        &emsp;&emsp;if (text === undefined) { </br>
+          &emsp;&emsp;&emsp;&emsp;// if the parameter is missing text = 'empty message';</br>
+          &emsp;&emsp; }</br></br>
 
-          &emsp;&emsp;alert(text);</br>
-        //OR</br>
-        alert(text ?? 'empty')</br>              
+          &emsp;&emsp;alert(text);</br></br>
+          &emsp;&emsp;//OR</br>
+          &emsp;&emsp;alert(text ?? 'empty')</br>              
       }</code></p>
       </li>
     </ul>
   </li>
 </ul>
+</div>
+<div>
 <h2>Returning a value</h2>
 <ul>
-  <li>A function can return a value back into the calling code as the result.<p>
+  <li>A function can return a value back into the calling code as the result.<p class="code">
 <code>function sum(a, b) {</br>
 &emsp; return a + b;</br>
 }</br></br>
@@ -75,13 +83,15 @@ console.log(result);</br>
 <li>If a function does not return a value, it is the same as if it returns undefined:</li>
 <li>An empty return is also the same as return undefined:</li>
 <li>Never add a newline between return and the value. That doesn’t work, because JavaScript assumes a semicolon after return. It effectively becomes an empty return</li>
-<li>If we want the returned expression to wrap across multiple lines, we should start it at the same line as return. Or at least put the opening parentheses: eg. <p>
-<code>return (</br>
+<li>If we want the returned expression to wrap across multiple lines, we should start it at the same line as return. Or at least put the opening parentheses: eg.
+  <p class="code"><code>return (</br>
   &emsp;&emsp;some + long + expression</br>
   &emsp;&emsp;+ or +</br>
   &emsp;&emsp;whatever * f(a) + f(b)</br>
 )</br></code></p></li>
 </ul>
+</div>
+<div>
 <h1>Naming a function</h1>
 <ul>
   <li>Functions are actions. So their name is usually a verb.</li>
@@ -96,11 +106,52 @@ console.log(result);</br>
    </ul>
   </li>
 </ul>
+</div>
+<div>
 <h2>One function – one action</h2>
 <ul>
   <li>Functions should be short and do exactly one thing. </li>
   <li>A function should do exactly what is suggested by its name, no more.</li>
   <li>Two independent actions usually deserve two functions, even if they are usually called together (in that case we can make a 3rd function that calls those two).</li>
   <li>A separate function is not only easier to test and debug – its very existence is a great comment!</li>  
+</ul>
+</div>
+<div>
+  <h2>Function Expressions</h2>
+  <ul>
+    <li>There is another syntax for creating a function that is called a Function Expression.
+   <p class="code"><code>
+      const functionName = function() {</br>
+      &emsp;&emsp;// function body;</br>
+    };
+    </code>
+   </p>
+    </li>
+    <li>It allows us to create a new function in the middle of any expression.</li>
+    <li>As the function creation happens in the context of the assignment expression (to the right side of =), this is a Function Expression.</li>
+    <li>Please note, there’s no name after the function keyword. Omitting a name is allowed for Function Expressions.</li>
+    <li>In more advanced situations, a function may be created and immediately called or scheduled for a later execution, not stored anywhere, thus remaining anonymous.</li>
+  </ul>
+</div>
+<h4>Function is a value</h4>
+<ul>
+  <li>Let’s reiterate: no matter how the function is created, a function is a value. Both of them store a function in a variable.</li>
+  <li>Unlike other programming languages, in JavaScript we call a function by its function name with parenthesis:<p><code>
+    functionName(); </br>
+    // OR</br>
+    let myFunction = functionName;</br>
+    myFunction();</br>
+  </code></p>
+  </li>
+  <li>
+    <h5>Why is there a semicolon at the end?</h5>
+    <ul>
+      <li>You might wonder, why does Function Expression have a semicolon ; at the end, but Function Declaration does not:</li>
+      <li>The answer is simple: a Function Expression is created here inside the assignment statement</li>
+      <li>The semicolon ; is recommended at the end of the statement, it’s not a part of the function syntax.</li>
+      <li>The semicolon would be there for a simpler assignment, such as let <code class="code"> myNumber = 25;</code>, and it’s also there for a function assignment.</li>
+    </ul>
+  </li>
+  <li></li>
 </ul>
 </div>

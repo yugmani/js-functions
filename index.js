@@ -71,14 +71,16 @@ function pow(x, n) {
   return result;
 }
 
-let x = prompt('x? ', '');
-let n = prompt('n? ', '');
+// let x = prompt('x? ', '');
+// let n = prompt('n? ', '');
+let n = 3;
+let x = 2;
 if (n < 1) {
   alert('Try Again');
   let x = prompt('x? ', '');
   let n = prompt('n? ', '');
 } else {
-  console.log(pow(3, 2));
+  console.log(pow(x, n));
 }
 
 // console.log(pow(3, 3));
