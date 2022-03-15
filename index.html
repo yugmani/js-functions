@@ -133,6 +133,7 @@ console.log(result);</br>
     <li>In more advanced situations, a function may be created and immediately called or scheduled for a later execution, not stored anywhere, thus remaining anonymous.</li>
   </ul>
 </div>
+<div>
 <h4>Function is a value</h4>
 <ul>
   <li>Let’s reiterate: no matter how the function is created, a function is a value. Both of them store a function in a variable.</li>
@@ -151,7 +152,31 @@ console.log(result);</br>
       <li>The semicolon ; is recommended at the end of the statement, it’s not a part of the function syntax.</li>
       <li>The semicolon would be there for a simpler assignment, such as let <code class="code"> myNumber = 25;</code>, and it’s also there for a function assignment.</li>
     </ul>
-  </li>
-  <li></li>
+  </li> 
 </ul>
+</div>
+<div>
+  <h2>Callback Functions</h2>
+  <ul>
+    <li>callback function or just callback is that we pass a function and expect it to be “called back” later if necessary</li>
+    <li class="code"><code>function ask(question, yes, no) {</br>
+      &emsp;&emsp;if (confirm(question)) yes()</br>
+      &emsp;&emsp;else no();</br>
+    }</br></br>
+    function showOk() {</br>
+      &emsp;&emsp;alert( "You agreed." );</br>
+    }</br></br>
+    
+    function showCancel() {</br>
+      &emsp;&emsp;alert( "You canceled the execution." );</br>
+    }</br></br>
+    
+    // usage: functions showOk, showCancel are passed as arguments to ask</br>
+    ask("Do you agree?", showOk, showCancel);
+  
+  </code></p></li>
+    <li>The arguments <code class="code">showOk</code> and <code class="code">showCancel</code> of <code class="code">ask</code> are called callback functions or just callbacks.</li>
+    <li></li>
+  </ul>
+</div>
 </div>
