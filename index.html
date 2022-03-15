@@ -1,1 +1,86 @@
-<div id="app"></div>
+<div id="app">
+<h1>Functions</h1>
+<h4>Functions are the main “building blocks” of the program. They allow the code to be called many times without repetition.</h4>
+
+<h2>Function Declaration</h2>
+<ul>
+<li>To create a function we can use a function declaration.</li>
+<li>The <mark>function</mark> keyword goes first, then goes the <em>name of the function</em>, then a list of <em>parameters</em> between the parentheses</li>
+<code>function name(parameter1, parameter2, ... parameterN) {</br>
+  &emsp;&emsp;...body...</br>
+}</code>
+<li>The function declared can be called by its name with parenthesis: <code>functionName(argument1, argument2, ...)</code></li>
+</ul>
+<h2>Local variables</h2>
+<ul>
+<li>A variable declared inside a function is only visible inside that function.</li>
+</ul>
+<h2>Outer variables</h2>
+<ul>
+<li>A function can access an outer variable as well, for example:</li>
+<li>The function has full access to the outer variable. It can modify it as well.</li>
+<li>If a same-named variable is declared inside the function then it shadows the outer one. The outer one is ignored</li>
+<li><h4>Global variables</h4>
+  <ul>
+    <li>Variables declared outside of any function, such as the outer userName in the code above, are called global.</li>
+    <li>Global variables are visible from any function (unless shadowed by locals).</li>
+    <li>It’s a good practice to minimize the use of global variables. Modern code has few or no globals. Most variables reside in their functions.</li>
+    <li>Sometimes though, they can be useful to store project-level data.</li>
+  </ul></li>
+</ul>
+<h2>Parameters</h2>
+<ul>
+  <li>We can pass arbitrary data to functions using parameters.</li>
+  <li>A parameter is the variable listed inside the parentheses in the function declaration (it’s a declaration time term)</li>
+  <li>When the function is called, the given values are copied to local variables. Then the function uses them.</li>
+  <li>When a value is passed as a function parameter, it’s also called an argument.</li>
+  <li>An argument is the value that is passed to the function when it is called (it’s a call time term).</li>
+  <li>
+    <h4>Default values</h4>
+    <ul>
+      <li>If a function is called, but an argument is not provided, then the corresponding value becomes undefined.</li>
+      <li>We can specify the so-called “default” (to use if omitted) value for a parameter in the function declaration, using =:</li>
+      <li><strong>Evaluation of default parameters:</strong>
+      In JavaScript, a default parameter is evaluated every time the function is called without the respective parameter.</li>
+      <li><strong>Alternative default parameters: </strong>
+        Sometimes it makes sense to assign default values for parameters not in the function declaration, but at a later stage.<p>
+        <code>function showMessage(text) {</br>
+        &emsp;&emsp;// ...</br>
+        &emsp;&emsp;text = text || 'empty';</br>
+        //OR ,</br>
+        &emsp;&emsp;if (text === undefined) { // if the parameter is missing
+          &emsp;&emsp; &emsp;&emsp;text = 'empty message';
+          &emsp;&emsp; }</br>
+
+          &emsp;&emsp;alert(text);</br>
+        //OR</br>
+        alert(text ?? 'empty')</br>              
+      }</code></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+<h2>Returning a value</h2>
+<ul>
+  <li>A function can return a value back into the calling code as the result.<p>
+<code>function sum(a, b) {</br>
+&emsp; return a + b;</br>
+}</br></br>
+let result = sum(1, 2);</br>
+console.log(result);</br>
+</code></p></li>
+<li>The directive return can be in any place of the function. When the execution reaches it, the function stops, and the value is returned to the calling code (assigned to result above).</li>
+<li>There may be many occurrences of return in a single function.</li>
+<li>It is possible to use return without a value. That causes the function <strong>to exit</strong> immediately.</li>
+<li>If a function does not return a value, it is the same as if it returns undefined:</li>
+<li>An empty return is also the same as return undefined:</li>
+<li>Never add a newline between return and the value. That doesn’t work, because JavaScript assumes a semicolon after return. It effectively becomes an empty return</li>
+<li>If we want the returned expression to wrap across multiple lines, we should start it at the same line as return. Or at least put the opening parentheses: eg. <p>
+<code>return (</br>
+  &emsp;&emsp;some + long + expression</br>
+  &emsp;&emsp;+ or +</br>
+  &emsp;&emsp;whatever * f(a) + f(b)</br>
+)</br></code></p></li>
+</ul>
+
+</div>
