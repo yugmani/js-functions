@@ -50,13 +50,36 @@ function isAgeGreater(age) {
 // console.log(checkAge());
 // console.log(isAgeGreater(12));
 
-
 // Function min(a, b)
 // Write a function min(a,b) which returns the least of two numbers a and b.
-function min(a, b){
+function min(a, b) {
   return a < b ? a : b;
 }
 
 console.log(min(2, 5)); //2
 console.log(min(1, 1)); //1
 console.log(min(3, -1)); //-1
+
+// Function pow(x, n)
+// Write a function pow(x,n) that returns x in power n. Or, in other words, multiplies x by itself n times and returns the result.
+function pow(x, n) {
+  let result = x;
+  for (let i = 1; i < n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
+
+let x = prompt('x? ', '');
+let n = prompt('n? ', '');
+if (n < 1) {
+  alert('Try Again');
+  let x = prompt('x? ', '');
+  let n = prompt('n? ', '');
+} else {
+  console.log(pow(3, 2));
+}
+
+// console.log(pow(3, 3));
+// console.log(pow(1, 100));
