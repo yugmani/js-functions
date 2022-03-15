@@ -82,5 +82,25 @@ console.log(result);</br>
   &emsp;&emsp;whatever * f(a) + f(b)</br>
 )</br></code></p></li>
 </ul>
-
+<h1>Naming a function</h1>
+<ul>
+  <li>Functions are actions. So their name is usually a verb.</li>
+  <li>It should be brief, as accurate as possible and describe what the function does, so that someone reading the code gets an indication of what the function does.</li>
+  <li>It is a widespread practice to start a function with a verbal prefix which vaguely describes the action.</li>
+  <li>With prefixes in place, a glance at a function name gives an understanding what kind of work it does and what kind of value it returns.</li>
+  <li><h4>Ultrashort function names</h4>
+   <ul>
+     <li>Functions that are used very often sometimes have ultrashort names.</li>
+     <li>For example, the jQuery framework defines a function with $. The Lodash library has its core function named _.</li>
+     <li>These are exceptions. Generally function names should be concise and descriptive.</li>
+   </ul>
+  </li>
+</ul>
+<h2>One function – one action</h2>
+<ul>
+  <li>Functions should be short and do exactly one thing. </li>
+  <li>A function should do exactly what is suggested by its name, no more.</li>
+  <li>Two independent actions usually deserve two functions, even if they are usually called together (in that case we can make a 3rd function that calls those two).</li>
+  <li>A separate function is not only easier to test and debug – its very existence is a great comment!</li>  
+</ul>
 </div>
