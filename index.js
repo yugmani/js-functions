@@ -85,3 +85,46 @@ if (n < 1) {
 
 // console.log(pow(3, 3));
 // console.log(pow(1, 100));
+
+
+//CALLBACK FUNCTIONS
+function ask(question, yes, no){
+  // if(confirm(question)) yes()
+  else no();
+}
+
+function showOk(){
+  console.log("You agreed.");
+}
+
+function showCancel(){
+  console.log('You canceled the execution.');
+}
+
+//function call
+ask("Do you agree?", showOk, showCancel);
+
+//shorter function expression
+ask(
+  "Do you agree?",
+  function() { alert("You agreed."); },
+  function() { alert("You canceled the execution."); }
+);
+
+// Here, functions are declared right inside the ask(...) call. 
+// They have no name, and so are called anonymous. 
+// Such functions are not accessible outside of ask (because they are not assigned to variables),
+
+//NOTE: A Function Expression is created when the execution reaches it and is usable only from that moment.
+
+// Function Declarations are different.
+
+// A Function Declaration can be called earlier than it is defined.
+// A global Function Declaration is visible in the whole script, no matter where it is.
+
+// That’s due to internal algorithms. When JavaScript prepares to run the script, it first looks for global Function Declarations in it and creates the functions. We can think of it as an “initialization stage”.
+
+// And after all Function Declarations are processed, the code is executed. So it has access to these functions.
+
+// In strict mode, when a Function Declaration is within a code block, it’s visible everywhere inside that block. But not outside of it.
+
